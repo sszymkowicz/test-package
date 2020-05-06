@@ -1,0 +1,13 @@
+{
+    "name": "jass/sitemap-importer",
+    "description": "Dev Test Sitemap Importer",
+    "type": "library",
+    "require": {
+        "vipnytt/sitemapparser": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "devtest\\": "src"
+        }
+    }
+}
