@@ -11,13 +11,16 @@ class SitemapImporter
     /**
      * @param string $sourceUrl
      * @return array
-     * @throws SitemapParserException
-     * @throws TransferException
+     * @throws SitemapImporterException
      */
     public function getData(string $sourceUrl)
     {
-        $parser = new SitemapParser();
-        $parser->parse($sourceUrl);
+        try {
+            $parser = new SitemapParser();
+            $parser->parse($sourceUrl);
+        } catch (SitemapParserException | TransferException $e) {
+            throw new SitemapImporterException($e->getMessage(), $e->getCode(), $e->getPrevious());
+        }
         $result = [];
         foreach ($parser->getURLs() as $url => $tags) {
             $parsed = parse_url($url);
