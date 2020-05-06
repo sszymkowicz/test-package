@@ -1,5 +1,5 @@
 {
-    "name": "jass/sitemap-importer",
+    "name": "jass/dev-test-sitemap-importer",
     "description": "Dev Test Sitemap Importer",
     "type": "library",
     "require": {
